@@ -1,5 +1,3 @@
-# Seq2Seq
-
 # Seq2Seq Code Generation: RNN vs. LSTM vs. Attention
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
@@ -77,7 +75,7 @@ All models share the same hyperparameters for fair comparison:
 * Matplotlib, Seaborn, NLTK, Datasets
 
 ### Installation
-```bash
+
 git clone [https://github.com/swadhinpal/Seq2Seq.git](https://github.com/swadhinpal/Seq2Seq.git)
 cd Seq2Seq
 
