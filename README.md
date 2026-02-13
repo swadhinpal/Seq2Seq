@@ -84,16 +84,15 @@ cd Seq2Seq
 ### Running the Notebook
 The core logic is contained in the Jupyter Notebooks.
 
-1. Open `seq2seq.ipynb` (or the latest version provided).
+1. Open `traing_bluescore.ipynb`.
 2. Run the cells sequentially to:
    * Download and preprocess data.
    * Train the three models.
    * Visualize loss curves and attention maps.
 
-```bash
-jupyter notebook seq2seq.ipynb
 
 ### 📈 Results & Analysis
+In `attention-error-weight-heatmap.ipynb`
 Performance Metrics (Test Set)
 Model	BLEU Score	Token Accuracy	Training Stability
 Vanilla RNN	~1.5	< 25%	Poor (Exploding Gradients)
