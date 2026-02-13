@@ -95,11 +95,11 @@ Detailed analysis can be found in `attention-error-weight-heatmap.ipynb`.
 
 **Performance Metrics (Test Set)**
 
-| Model | BLEU Score | Token Accuracy | Exact Match | Training Stability |
+| Model | BLEU Score (%) | Token Accuracy | Exact Match | Training Stability |
 | :--- | :--- | :--- | :--- | :--- |
-| **Vanilla RNN** | 11.16 | 19.13% | 0.00% | Poor (Exploding Gradients) |
-| **LSTM** | 19.64 | 18.67% | 0.00% | Stable |
-| **Attention** | **21.26** | **21.06%** | **0.00%** | **Best Convergence** |
+| **Vanilla RNN** | 11.16% | 19.13% | 0.00% | Poor (Exploding Gradients) |
+| **LSTM** | 19.64% | 18.67% | 0.00% | Stable |
+| **Attention** | **21.26%** | **21.06%** | **0.00%** | **Best Convergence** |
 
 ### 📏 Performance by Docstring Length (Token Accuracy)
 
