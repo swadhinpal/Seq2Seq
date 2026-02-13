@@ -4,7 +4,6 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
 
 This repository contains a comprehensive comparative analysis of Sequence-to-Sequence (Seq2Seq) models for **Text-to-Code Generation**. It evaluates three distinct architectures—**Vanilla RNN**, **LSTM**, and **Attention-based LSTM**—on the task of generating Python code from natural language docstrings.
 
@@ -36,6 +35,7 @@ Automatic code generation requires a model to understand user intent (semantics)
 ## 📊 Dataset
 
 We use the **CodeSearchNet (Python)** dataset, specifically the subset hosted by `Nan-Do` on Hugging Face.
+Dataset link: https://huggingface.co/datasets/Nan-Do/code-search-net-python
 
 * **Source:** Function Docstrings (Natural Language)
 * **Target:** Python Function Bodies
@@ -92,13 +92,27 @@ The core logic is contained in the Jupyter Notebooks.
 
 
 ### 📈 Results & Analysis
-In `attention-error-weight-heatmap.ipynb`
-Performance Metrics (Test Set)
-Model	BLEU Score	Token Accuracy	Training Stability
-Vanilla RNN	~1.5	< 25%	Poor (Exploding Gradients)
-LSTM	~10.2	~40%	Stable
-Attention	~22.8	> 55%	Best Convergence
-Qualitative Findings
+
+Detailed analysis can be found in `attention-error-weight-heatmap.ipynb`.
+
+**Performance Metrics (Test Set)**
+
+| Model | BLEU Score | Token Accuracy | Exact Match | Training Stability |
+| :--- | :--- | :--- | :--- | :--- |
+| **Vanilla RNN** | 11.16 | 19.13% | 0.00% | Poor (Exploding Gradients) |
+| **LSTM** | 19.64 | 18.67% | 0.00% | Stable |
+| **Attention** | **21.26** | **21.06%** | **0.00%** | **Best Convergence** |
+
+### 📏 Performance by Docstring Length (Token Accuracy)
+
+| Docstring Length | Token Count | Vanilla RNN | LSTM | Attention |
+| :--- | :--- | :--- | :--- | :--- |
+| **0-10** | 30,577 | 19.47% | 20.34% | **23.00%** |
+| **10-20** | 21,726 | 18.20% | 17.83% | **20.41%** |
+| **20-30** | 7,060 | 19.52% | 16.69% | **19.82%** |
+| **30+** | 12,645 | 18.19% | 15.72% | **18.78%** |
+
+### Qualitative Findings
 
     RNN: Produced repetitive nonsense (e.g., def def def self self).
 
@@ -119,7 +133,8 @@ We visualize the alignment between docstring words and generated code tokens.
     Vertical Bars: Indicates the model is "stuck" on a specific word (common in failed generations).
 
 (Note: Add an actual image to an assets folder in your repo for this link to work)
-🤝 Contributing
+
+### 🤝 Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for improvements.
 
